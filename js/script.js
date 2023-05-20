@@ -23,18 +23,20 @@ stars.forEach(star => {
 
 // Hide the iframe on page load
 const iframeContainer = document.querySelector('.page__iframe');
-iframeContainer.classList.add('hidden');
-
-// Show the iframe in fullscreen when the button is clicked
-const playButton = document.querySelector('.page__button');
-playButton.addEventListener('click', () => {
-    iframeContainer.classList.remove('hidden');
-    iframeContainer.classList.add('fullscreen');
-});
-
-// Hide the iframe when the lobby button is clicked
-const lobbyButton = document.querySelector('#lobbyButtonWrapper-hit-area');
-lobbyButton.addEventListener('click', () => {
+if (iframeContainer) {
     iframeContainer.classList.add('hidden');
-    iframeContainer.classList.remove('fullscreen');
-});
+    // Show the iframe in fullscreen when the button is clicked
+    const playButton = document.querySelector('.page__button');
+    playButton.addEventListener('click', () => {
+        iframeContainer.classList.remove('hidden');
+        iframeContainer.classList.add('fullscreen');
+    });
+
+    // Hide the iframe when the close button is clicked
+    const closeButton = document.querySelector('#iframe-close');
+    closeButton.addEventListener('click', () => {
+        iframeContainer.classList.add('hidden');
+        iframeContainer.classList.remove('fullscreen');
+    });
+}
+
