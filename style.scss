@@ -1,11 +1,13 @@
-body {
+
+html, body {
+  height: 100%;
+}body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #000;
+
 }
 .page {
-  background-color: #000;
   color: #fff;
-  height: 100%;
-  
   // .page__container
   &__container {
     max-width: 768px;
